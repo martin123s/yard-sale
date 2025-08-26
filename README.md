@@ -3,9 +3,9 @@
 ### Deployed backend on AWS EC2 and frontend on Amplify, the website is: 
 ```bash npm install npm run dev ```
 
-![yard sale home page](client/public/yardsalewebsite.png)
+![yard sale home list](client/public/yardsalewebsite.png)
 
-![yard sale map](client/public/yardsalemap.png)
+![yard sale home map](client/public/yardsalemap.png)
 
 ## Frontend (client)
 - **React** for building the user interface  

@@ -17,11 +17,14 @@ import ResetPwd from './pages/ResetPwd.jsx'
 
 // protected page
 const ProtectedRoutes = ({ children }) => {
-  const { isAuthenticated, user } = useUserStore()
+  const isAuthenticated = useUserStore(state => state.isAuthenticated)
+  const user = useUserStore(state => state.user)
+
   if (!isAuthenticated) {
     return <Navigate to='/signin' replace />
   }
-  if (!user.isVerified) {
+
+  if (user && !user.isVerified) {
     return <Navigate to='/auth' replace />
   }
   return children
@@ -31,6 +34,9 @@ const AuthenticatedUser = ({ children }) => {
   const { isAuthenticated, user } = useUserStore()
   if (isAuthenticated && user.isVerified) {
     return <Navigate to='/' replace />
+  }
+  if (isAuthenticated && !user.isVerified) {
+    return <Navigate to='/auth' replace />
   }
   return children
 }
@@ -77,12 +83,6 @@ function App() {
           </AuthenticatedUser>
         } />
 
-        <Route path='/auth' element={
-          <AuthenticatedUser>
-            <Auth />
-          </AuthenticatedUser>
-        } />
-
         <Route path='/forgot-pwd' element={
           <AuthenticatedUser>
             <ForgotPwd />
@@ -94,7 +94,8 @@ function App() {
             <ResetPwd />
           </AuthenticatedUser>
         } />
-        
+
+        <Route path='/auth' element={<Auth />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/userterms' element={<UserTerms />} />

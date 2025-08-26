@@ -1,8 +1,11 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useLocation } from 'react-router';
+import { Navigate } from 'react-router-dom'
+
+import { useUserStore } from '../Store/useUserStore';
 import Logo from '../components/Logo';
 import Footer from '../components/Footer';
-import { useNavigate, useLocation } from 'react-router';
-import { useUserStore } from '../Store/useUserStore';
+
 
 
 
@@ -14,7 +17,12 @@ const Auth = () => {
   const [userMsg, setUserMsg] = useState(null)
 
   const { verifyEmail } = useUserStore()
+  const { isAuthenticated, user } = useUserStore()
   const navigate = useNavigate();
+
+  if (isAuthenticated && user.isVerified) {
+    return <Navigate to='/' replace />
+  }
 
   const handleSubmit = async () => {
     const verifyCode = code;

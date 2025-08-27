@@ -18,7 +18,7 @@ const SignIn = () => {
   const { signin } = useUserStore()
   const navigate = useNavigate();
 
-  const handleSignUp = async (e) => { 
+  const handleSignin = async (e) => { 
     e.preventDefault()
     try {
       await signin(email, password)
@@ -102,7 +102,7 @@ const SignIn = () => {
                 <div className="flex justify-center items-center">
                   <a className="font-bold text-4xl">Log in</a>
                 </div>
-                <form onSubmit={handleSignUp} className="mt-5 max-w-md flex flex-col w-auto">
+                <form onSubmit={handleSignin} className="mt-5 max-w-md flex flex-col w-auto">
 
                   {/* email handle */}
                   <div className="flex flex-col mb-3">

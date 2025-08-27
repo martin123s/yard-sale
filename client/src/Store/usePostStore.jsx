@@ -38,9 +38,11 @@ export const usePostStore = create((set) => ({
       const response = await axios.get(`${API_URL}`)
       const data = response.data
       set({ userId: data.userId })
+      console.log("user data", data)
       return data.items
     } catch (error) {
       const message = error?.message || error?.response?.data?.message || "Error getting items from backend"
+      console.log("error message", message)
       set({ error: message, userId: null})
       throw new Error(message)
     }

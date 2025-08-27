@@ -11,6 +11,7 @@ export const generateJWT = (res, userId) => {
     secure: process.env.NODE_ENV === "production",
     sameSite: "none", // avoid csrf attack
     maxAge: 7 * 24 * 60 * 60 * 1000,
+    path: "/",
   });
 
   return token;

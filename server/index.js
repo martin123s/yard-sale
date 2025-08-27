@@ -25,6 +25,10 @@ app.get('/', (req, res) => {
   res.send('This is backend route without authentication')
 })
 
+app.get('/testing', (req, res) => {
+  res.send('This is Testing URL at backend route without authentication')
+})
+
 app.use("/api/user", userRouters);
 app.use("/api/posts", postRouters);
 app.use("/api/likes", likesRouters);

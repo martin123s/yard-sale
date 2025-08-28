@@ -198,7 +198,7 @@ const DetailsPage = () => {
                           className="overflow-hidden object-cover w-full h-full" />
                       </div>
                     ) : (
-                      <div key={index} className="bg-gray-50 h-56">
+                      <div key={index+1} className="bg-gray-50 h-56">
                         <img src={comingsoon} alt="coming soon"
                           className="overflow-hidden object-cover w-full h-full" />
                       </div>// handle less pics situation

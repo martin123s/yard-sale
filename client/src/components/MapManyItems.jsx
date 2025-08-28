@@ -1,6 +1,6 @@
 import React from 'react'
-import { useState, useRef, useEffect} from 'react';
-import { Map, APIProvider, AdvancedMarker, Pin, InfoWindow} from '@vis.gl/react-google-maps';
+import { useState, useCallback, useEffect} from 'react';
+import { Map, APIProvider, AdvancedMarker, Pin, InfoWindow, useMap} from '@vis.gl/react-google-maps';
 import { useLoader } from '../Store/MapLoaderStore';
 import "./MapManyItems.css"
 import { useItemStore } from '../Store/useItemStore';
@@ -21,28 +21,28 @@ const MapManyItems = () => {
   const items = useItemStore((state) => state.items)
   const pickedItem = useItemStore(state => state.pickedItem)
   const selectedItems = pickedItem ? items.filter(item => item.types.includes(pickedItem)) : items
-  
+
 
 
   return isLoaded && (
-
     <APIProvider>
       <Map
+        key={JSON.stringify(center)} 
         className="w-full h-screen rounded-2xl overflow-hidden"
         defaultZoom={13}
-        center={center}
+        defaultCenter={center}
         options={{
           mapId: mapid,
           gestureHandling: "auto",
           zoomControl: true, // Show + and -
+          scrollwheel: false,
           disableDefaultUI: true, // Remove everything else
-          draggable: true,
         }}
       >
         {selectedItems.map((item, idx) => (
           <div key={idx}>
-            <AdvancedMarker position={{ lat: item.address.lat, lng: item.address.lng }} onClick={() => setSelected(pre => pre?._id === item._id? null: item)}>
-              <Pin background={"#FBBC04"} glyphColor={"#000"} borderColor={'#000'} scale={1.5}/>
+            <AdvancedMarker position={{ lat: item.address.lat, lng: item.address.lng }} onClick={() => setSelected(pre => pre?._id === item._id ? null : item)}>
+              <Pin background={"#FBBC04"} glyphColor={"#000"} borderColor={'#000'} scale={1.5} />
             </AdvancedMarker>
 
             {selected?._id === item._id && (

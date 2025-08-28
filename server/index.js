@@ -16,9 +16,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const URL = process.env.URL
 
-app.use(cors({ origin: URL, credentials: true, allowedHeaders: ["Authorization", "Content-Type"], }))
 app.use(express.json()); // allow parse incoming request: req.body
 app.use(cookieParser()) // allow parse incoming cookie 
+app.use(cors({ origin: URL, credentials: true,}))
 app.use(express.static('uploads'))
 
 app.get('/', (req, res) => {

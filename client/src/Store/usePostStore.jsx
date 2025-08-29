@@ -3,7 +3,7 @@ import axios from 'axios'
 
 
 const API_URL = import.meta.env.VITE_URL + "/api/posts"
-axios.defaults.withCredentials = true
+
 
 export const usePostStore = create((set) => ({
   userId: null,
@@ -21,7 +21,7 @@ export const usePostStore = create((set) => ({
           const percent = Math.round((event.loaded * 100) / event.total);
           set({ progress: percent })
         }
-      })
+      }, { withCredentials: true })
       set({ progress: 100 })
     } catch (error) {
       const message = error?.response?.data?.message || error?.message ||  "Error sending post"
@@ -35,7 +35,7 @@ export const usePostStore = create((set) => ({
   getItems: async () => {
     set({ error: null})
     try {
-      const response = await axios.get(`${API_URL}`)
+      const response = await axios.get(`${API_URL}`, { withCredentials: true })
       const data = response.data
       set({ userId: data.userId })
       return data.items
@@ -52,7 +52,7 @@ export const usePostStore = create((set) => ({
     try {
       const res = await axios.delete(`${API_URL}`, {
         data: { deleteIds },
-      });
+      }, { withCredentials: true });
       return res.data;
     } catch (error) {
       const message = error?.response?.data?.message || error?.message ||  "Error deleting post"

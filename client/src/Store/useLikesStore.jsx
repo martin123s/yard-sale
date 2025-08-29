@@ -3,7 +3,6 @@ import axios from 'axios'
 
 
 const API_URL = import.meta.env.VITE_URL + "/api/likes"
-axios.defaults.withCredentials = true
 
 export const useLikesStore = create((set, get) => ({
   userId: null,
@@ -20,7 +19,7 @@ export const useLikesStore = create((set, get) => ({
           ([_, v]) => typeof v === "boolean"
         )
       );
-      await axios.post(`${API_URL}`, { likes: cleanedLikes })
+      await axios.post(`${API_URL}`, { likes: cleanedLikes }, { withCredentials: true })
     } catch (error) {
       const message = error?.response?.data?.message || error?.message ||  "Error saving user likes"
       set({ error: message, likes: {}, userId: null})
@@ -31,7 +30,7 @@ export const useLikesStore = create((set, get) => ({
   getLikes: async () => {
     set({ error: null})
     try {
-      const response = await axios.get(`${API_URL}`)
+      const response = await axios.get(`${API_URL}`, { withCredentials: true })
       set({ userId: response.data.userId, likes: response.data.likes })
       return response.data.likes
     } catch (error) {

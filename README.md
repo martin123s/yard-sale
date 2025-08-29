@@ -1,7 +1,7 @@
 # Yard Sale Project
 
 ### Deployed backend on AWS EC2 and frontend on Amplify, the website is: 
-```bash npm install npm run dev ```
+``` https://main.d3swfgw9g8qaed.amplifyapp.com ```
 
 ![yard sale home list](client/public/yardsalewebsite.png)
 

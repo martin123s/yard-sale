@@ -1,8 +1,9 @@
 import { create } from 'zustand'
 import axios from 'axios'
+import api from '../utils/AxiosConnt.jsx'
 
 
-const API_URL = import.meta.env.VITE_URL + "/api/user"
+const API_URL = "/api/user"
 
 
 export const useUserStore = create((set) => ({
@@ -15,7 +16,7 @@ export const useUserStore = create((set) => ({
   signup: async (username, email, password) => {
     set({ error: null, isLoading: true })
     try {
-      const response = await axios.post(`${API_URL}/signup`, { username, email, password }, { withCredentials: true })
+      const response = await api.post(`${API_URL}/signup`, { username, email, password })
       set({ user: response.data.user, isAuthenticated: true, isLoading: false})
       return response.data.user
     } catch (error) {
@@ -27,7 +28,7 @@ export const useUserStore = create((set) => ({
   signin: async (email, password) => {
     set({ error: null, isLoading: true })
     try {
-      const response = await axios.post(`${API_URL}/signin`, { email, password }, { withCredentials: true })
+      const response = await api.post(`${API_URL}/signin`, { email, password })
       set({ user: response.data.user, isAuthenticated: true, error: null, isLoading: false })
       
     } catch (error) {
@@ -39,7 +40,7 @@ export const useUserStore = create((set) => ({
   verifyEmail: async (code) => {
     set({ error: null, isLoading: true })
     try {
-      const response = await axios.post(`${API_URL}/verify-email`, { code }, { withCredentials: true })
+      const response = await api.post(`${API_URL}/verify-email`, { code })
       set({ user: response.data.user, isAuthenticated: true, isLoading: false })
       return response.data.user
     } catch (error) {
@@ -51,7 +52,7 @@ export const useUserStore = create((set) => ({
   checkAuth: async () => {
     set({ isCheckingAuth: true, error: null, isLoading: true })
     try {
-      const response = await axios.get(`${API_URL}/check-auth`, { withCredentials: true })
+      const response = await api.get(`${API_URL}/check-auth`)
       set({user: response.data.user, isAuthenticated: true, isCheckingAuth: false, isLoading: false})
     } catch (error) {
       set({error: null, isCheckingAuth: false, isAuthenticated: false, isLoading: false})
@@ -61,7 +62,7 @@ export const useUserStore = create((set) => ({
   logout: async () => {
     set({ error: null, isLoading: true })
     try {
-      await axios.post(`${API_URL}/logout`, { withCredentials: true })
+      await api.post(`${API_URL}/logout`)
       set({user: null, error: null, isAuthenticated: false, isLoading: false})
     } catch (error) {
       set({ error: "error logging out" , isLoading: false})
@@ -72,7 +73,7 @@ export const useUserStore = create((set) => ({
   forgotPassword: async (email) => {
     set({ error: null, isLoading: true })
     try {
-      const response = await axios.post(`${API_URL}/forget-password`, { email }, { withCredentials: true })
+      const response = await api.post(`${API_URL}/forget-password`, { email })
       set({ user: response.data.user, isCheckingAuth: false, isAuthenticated: false, isLoading: false })
       return response.data.user
     } catch (error) {
@@ -84,7 +85,7 @@ export const useUserStore = create((set) => ({
   resetPassword: async (code, password, token) => {
     set({ error: null, isLoading: true })
     try {
-      const response = await axios.post(`${API_URL}/reset-password/${token}`, { code, password }, { withCredentials: true })
+      const response = await api.post(`${API_URL}/reset-password/${token}`, { code, password })
       set({ user: response.data.user, isCheckingAuth: false, isAuthenticated: false, isLoading: false})
       return response.data.user
     } catch (error) {

@@ -1,8 +1,9 @@
 import { create } from 'zustand'
 import axios from 'axios'
+import api from '../utils/AxiosConnt.jsx'
 
 
-const API_URL = import.meta.env.VITE_URL + "/api/posts"
+const API_URL = "/api/posts"
 
 
 export const usePostStore = create((set) => ({
@@ -13,7 +14,7 @@ export const usePostStore = create((set) => ({
   sendPost: async (formData) => {
     set({ error: null, progress: 0 })
     try {
-      await axios.post(`${API_URL}`, formData, {
+      await api.post(`${API_URL}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },
@@ -21,7 +22,7 @@ export const usePostStore = create((set) => ({
           const percent = Math.round((event.loaded * 100) / event.total);
           set({ progress: percent })
         }
-      }, { withCredentials: true })
+      })
       set({ progress: 100 })
     } catch (error) {
       const message = error?.response?.data?.message || error?.message ||  "Error sending post"
@@ -35,7 +36,7 @@ export const usePostStore = create((set) => ({
   getItems: async () => {
     set({ error: null})
     try {
-      const response = await axios.get(`${API_URL}`, { withCredentials: true })
+      const response = await api.get(`${API_URL}`)
       const data = response.data
       set({ userId: data.userId })
       return data.items
@@ -50,9 +51,9 @@ export const usePostStore = create((set) => ({
   deletePost: async (deleteIds) => {
     set({ error: null })
     try {
-      const res = await axios.delete(`${API_URL}`, {
+      const res = await api.delete(`${API_URL}`, {
         data: { deleteIds },
-      }, { withCredentials: true });
+      });
       return res.data;
     } catch (error) {
       const message = error?.response?.data?.message || error?.message ||  "Error deleting post"

@@ -1,8 +1,18 @@
-# React + Vite
+# React + Vite Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## .env Setup
 
-Currently, two official plugins are available:
+```bash
+VITE_GOOGLE_MAP_API=your google map api
+VITE_GOOGLE_MAP_ID=your google map id
+VITE_URL=backend url
+VITE_TIME_HOUR=set the hours of auto uploading user likes
+```
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Run the frontend
+```bash
+cd current folder/ client
+npm install
+npm run dev
+```

@@ -1,7 +1,6 @@
 import React from 'react'
 import { MapPinned, List } from 'lucide-react';
-import { useState } from 'react';
-import { useMapDataStore } from '../Store/useMapDataStore';
+import { useMapDataStore } from '../../Store/useMapDataStore';
 
 const ToggleMapList = () => {
 

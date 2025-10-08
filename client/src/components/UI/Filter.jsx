@@ -5,7 +5,6 @@ const Filter = ({setFilter}) => {
 
   const prices = ["All Free", "Some Free", "None Free"];
   const category = ["Yard Sale", "Free Pickup"];
-  // const goods = ["Furniture", "Home Décor", "Clothing", "Tools", "Pet Supplies", "Sports & Fitness", "Electronics", "Miscellaneous"];
   const conditions = ["Like new", "Gently used", "Good condition", "Needs some TLC"];
   const times = ["Past 3 days", "Past 5 days", "Coming Soon"];
 

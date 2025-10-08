@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect } from 'react'
 import { X, Trash2 } from 'lucide-react';
 import 'react-calendar/dist/Calendar.css';
-import { useItemStore } from '../Store/useItemStore';
-import { usePostStore } from '../Store/usePostStore';
-import { useLikesStore } from '../Store/useLikesStore';
+import { useItemStore } from '../../Store/useItemStore';
+import { usePostStore } from '../../Store/usePostStore';
+import { useLikesStore } from '../../Store/useLikesStore';
 
 
 

@@ -1,8 +1,7 @@
 import React from 'react'
-import { useState, useRef, useEffect} from 'react';
 import { Map, APIProvider, AdvancedMarker, Pin} from '@vis.gl/react-google-maps';
-import { useLoader } from '../Store/MapLoaderStore';
-import { useItemStore } from '../Store/useItemStore';
+import { useLoader } from '../../Store/MapLoaderStore';
+import { useItemStore } from '../../Store/useItemStore';
 
 
 

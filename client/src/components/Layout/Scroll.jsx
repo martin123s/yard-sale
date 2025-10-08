@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import {
   ChevronLeft, ChevronRight, Sofa, Amphora, Shirt, Shovel, PawPrint, Bike, Atom, BookA, Boxes
 } from "lucide-react";
-import { useItemStore } from "../Store/useItemStore";
+import { useItemStore } from "../../Store/useItemStore";
   
 
 

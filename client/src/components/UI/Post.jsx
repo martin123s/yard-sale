@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { X, SquareCheckBig, CloudUpload } from 'lucide-react';
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
-import SearchBar from './SearchBar';
-import { usePostStore } from '../Store/usePostStore';
-import { useItemStore } from '../Store/useItemStore';
+import SearchBar from '../Map/SearchBar';
+import { usePostStore } from '../../Store/usePostStore';
+import { useItemStore } from '../../Store/useItemStore';
 import {useDropzone} from 'react-dropzone'
 
 

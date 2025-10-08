@@ -1,17 +1,17 @@
 import React from 'react'
-import Filter from './Filter.jsx'
-import Post from './Post.jsx'
-import MyPost from './MyPost.jsx'
-import SearchBar from './SearchBar.jsx';
+import Filter from '../UI/Filter.jsx'
+import Post from '../UI/Post.jsx'
+import MyPost from '../UI/MyPost.jsx'
+import SearchBar from '../Map/SearchBar.jsx';
 
 import {Sun, MoonStar, SlidersHorizontal, LogOut, Settings, Signature, Rss, UserCheck} from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Scroll from './Scroll.jsx';
 import { useNavigate } from 'react-router';
-import { useUserStore } from '../Store/useUserStore.jsx';
-import { useItemStore } from '../Store/useItemStore.jsx';
-import { useLikesStore } from '../Store/useLikesStore.jsx';
-import { useMapDataStore } from '../Store/useMapDataStore';
+import { useUserStore } from '../../Store/useUserStore.jsx';
+import { useItemStore } from '../../Store/useItemStore.jsx';
+import { useLikesStore } from '../../Store/useLikesStore.jsx';
+import { useMapDataStore } from '../../Store/useMapDataStore';
 
 
 

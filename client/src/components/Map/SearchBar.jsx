@@ -1,7 +1,7 @@
 import React from 'react'
-import { useState, useRef} from 'react';
-import { StandaloneSearchBox, Autocomplete } from '@react-google-maps/api'
-import {useLoader} from '../Store/MapLoaderStore';
+import { useRef} from 'react';
+import { StandaloneSearchBox } from '@react-google-maps/api'
+import {useLoader} from '../../Store/MapLoaderStore';
 import { Search, X } from 'lucide-react';
 
 

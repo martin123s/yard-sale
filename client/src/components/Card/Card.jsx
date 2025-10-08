@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import CardImages from "./CardImages"
 import { X, Heart} from 'lucide-react';
-import { useLikesStore } from "../Store/useLikesStore";
-import { useItemStore } from "../Store/useItemStore";
+import { useLikesStore } from "../../Store/useLikesStore";
+import { useItemStore } from "../../Store/useItemStore";
 import { useNavigate } from "react-router";
 
 
-const IMAGE_URL = import.meta.env.VITE_URL
 
 const Card = ({ item, slides, className, round, setSelected}) => {
 

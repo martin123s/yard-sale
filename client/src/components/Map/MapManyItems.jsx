@@ -1,10 +1,10 @@
 import React from 'react'
-import { useState, useCallback, useEffect} from 'react';
-import { Map, APIProvider, AdvancedMarker, Pin, InfoWindow, useMap} from '@vis.gl/react-google-maps';
-import { useLoader } from '../Store/MapLoaderStore';
+import { useState } from 'react';
+import { Map, APIProvider, AdvancedMarker, Pin, InfoWindow } from '@vis.gl/react-google-maps';
+import { useLoader } from '../../Store/MapLoaderStore';
 import "./MapManyItems.css"
-import { useItemStore } from '../Store/useItemStore';
-import { useMapDataStore } from '../Store/useMapDataStore';
+import { useItemStore } from '../../Store/useItemStore';
+import { useMapDataStore } from '../../Store/useMapDataStore';
 import Card from "./Card"
 
 

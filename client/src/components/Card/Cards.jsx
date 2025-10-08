@@ -1,6 +1,6 @@
-import React, {useState, useEffect, useRef } from 'react'
+import React from 'react'
 import Card from "./Card"
-import { useItemStore } from '../Store/useItemStore';
+import { useItemStore } from '../../Store/useItemStore';
 
 
 

@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation } from 'react-router';
-import Footer from "../components/Footer";
-import Logo from "../components/Logo";
+import Footer from '../components/Layout/Footer';
+import Logo from '../components/UI/Logo';
 
 
 const Contact = () => {

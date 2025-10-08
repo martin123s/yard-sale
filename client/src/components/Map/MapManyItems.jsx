@@ -5,7 +5,7 @@ import { useLoader } from '../../Store/MapLoaderStore';
 import "./MapManyItems.css"
 import { useItemStore } from '../../Store/useItemStore';
 import { useMapDataStore } from '../../Store/useMapDataStore';
-import Card from "./Card"
+import Card from "../Card/Card"
 
 
 const mapid = import.meta.env.VITE_GOOGLE_MAP_ID;

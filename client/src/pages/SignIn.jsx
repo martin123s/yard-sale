@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import signinPic from "../assets/images/signin.jpg"
 import {LogIn, LockKeyhole, Mail, Eye, EyeOff, BellRing, Telescope, Rss, SkipForward} from 'lucide-react';
-import Footer from '../components/Footer';
-import Logo from '../components/Logo';
+import Footer from '../components/Layout/Footer';
+import Logo from '../components/UI/Logo';
 import { useNavigate } from 'react-router';
 import { useUserStore } from '../Store/useUserStore';
 

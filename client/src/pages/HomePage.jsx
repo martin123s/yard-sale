@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Cards from '../components/Cards'
-import MapManyItems from '../components/MapManyItems'
-import ToggleMapList from '../components/ToggleMapList'
+import Header from '../components/Layout/Header'
+import Footer from '../components/Layout/Footer'
+import Cards from '../components/Card/Cards'
+import MapManyItems from '../components/Map/MapManyItems'
+import ToggleMapList from '../components/UI/ToggleMapList'
 
 import { usePostStore } from '../Store/usePostStore';
 import { useLikesStore } from "../Store/useLikesStore";

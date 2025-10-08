@@ -3,8 +3,8 @@ import { useNavigate, useLocation } from 'react-router';
 import { Navigate } from 'react-router-dom'
 
 import { useUserStore } from '../Store/useUserStore';
-import Logo from '../components/Logo';
-import Footer from '../components/Footer';
+import Logo from '../components/UI/Logo';
+import Footer from '../components/Layout/Footer';
 
 
 

@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react'
-import Logo from '../components/Logo';
-import Footer from '../components/Footer';
+import Logo from '../components/UI/Logo';
+import Footer from '../components/Layout/Footer';
 import { useNavigate, useLocation, useParams } from 'react-router';
 import { useUserStore } from '../Store/useUserStore';
 import { Eye, EyeOff } from 'lucide-react';

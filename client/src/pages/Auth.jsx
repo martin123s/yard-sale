@@ -4,7 +4,6 @@ import { Navigate } from 'react-router-dom'
 
 import { useUserStore } from '../Store/useUserStore';
 import Logo from '../components/UI/Logo';
-import Footer from '../components/Layout/Footer';
 
 
 
@@ -122,8 +121,6 @@ const Auth = () => {
 
         </div>
       </div>
-
-      <Footer/>
     </>
   )
 }

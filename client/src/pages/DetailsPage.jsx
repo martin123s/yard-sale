@@ -3,9 +3,8 @@ import {Heart, ChevronLeft, Share, CircleSlash2, Grip, Star, Handshake, Shopping
 import { useState, useEffect, useRef } from 'react';
 
 import comingsoon from "../assets/images/comingsoon.jpg"
-
-import Footer from '../components/Layout/Footer';
 import MapOneItem from '../components/Map/MapOneItem';
+
 import { useLocation, useNavigate, useParams } from 'react-router';
 import { useLikesStore } from "../Store/useLikesStore";
 import { useItemStore } from '../Store/useItemStore';
@@ -344,8 +343,6 @@ const DetailsPage = () => {
         </div>
 
       </div>
-
-      <Footer/>
     </>
   )
 }

@@ -1,7 +1,6 @@
 import signUpPic from "../assets/images/signup.jpg"
 import React, { useState, useEffect } from 'react';
 import {LogIn, UserRound, LockKeyhole, Mail, Eye, EyeOff, BellRing, Telescope, Rss} from 'lucide-react';
-import Footer from '../components/Layout/Footer';
 import Logo from '../components/UI/Logo';
 import { useNavigate } from 'react-router';
 import { useUserStore } from '../Store/useUserStore';
@@ -223,7 +222,6 @@ const SignUp = () => {
 
         </div>
       </div>
-      <Footer/>
     </>
   )
 }

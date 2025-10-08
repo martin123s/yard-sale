@@ -3,7 +3,7 @@ import pic404 from '../assets/images/pic404.jpg'
 import { SearchX } from 'lucide-react';
 import Logo from '../components/UI/Logo';
 import { NavLink } from 'react-router';
-import Footer from '../components/Layout/Footer';
+
 
 const Page404 = () => {
   return (
@@ -36,8 +36,6 @@ const Page404 = () => {
         </div>
         
       </div>
-
-      <Footer/>
     </>
   )
 }

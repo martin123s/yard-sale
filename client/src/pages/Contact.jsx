@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useLocation } from 'react-router';
-import Footer from '../components/Layout/Footer';
 import Logo from '../components/UI/Logo';
 
 
@@ -82,8 +81,6 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      
-      <Footer/>
     </>
   );
 };

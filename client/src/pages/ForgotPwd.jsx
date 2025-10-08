@@ -1,6 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react'
 import Logo from '../components/UI/Logo';
-import Footer from '../components/Layout/Footer';
 import { useNavigate, useLocation } from 'react-router';
 import { useUserStore } from '../Store/useUserStore';
 
@@ -115,8 +114,6 @@ const ForgotPwd = () => {
 
         </div>
       </div>
-
-      <Footer/>
     </>
   )
 }

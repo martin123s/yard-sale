@@ -1,4 +1,3 @@
-import Footer from "../components/Layout/Footer";
 import Logo from "../components/UI/Logo";
 import {ChevronLeft} from 'lucide-react';
 import { useNavigate } from "react-router";
@@ -39,8 +38,6 @@ const UserTerms = () => {
         </div>
 
       </div>
-      
-      <Footer/>
     </>
   );
 };

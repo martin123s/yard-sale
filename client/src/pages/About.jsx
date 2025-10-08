@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import Logo from '../components/UI/Logo';
-import Footer from '../components/Layout/Footer';
 import { useLocation } from 'react-router';
 
 const About = () => {
@@ -58,8 +57,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      <Footer/>
     </>
   )
 }

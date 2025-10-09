@@ -16,6 +16,7 @@ import Auth from './pages/Auth.jsx'
 import ForgotPwd from './pages/ForgotPwd.jsx'
 import ResetPwd from './pages/ResetPwd.jsx'
 
+
 // layouts
 import FooterOnlyLayout from './layouts/FooterOnlyLayout.jsx'
 
